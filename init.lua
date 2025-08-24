@@ -969,6 +969,14 @@ require('lazy').setup({
       vim.cmd.colorscheme 'ofirkai-darkblue'
     end,
   },
+  {
+    'oxfist/night-owl.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'night-owl'
+    end,
+  },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
