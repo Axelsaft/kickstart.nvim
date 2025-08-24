@@ -856,7 +856,10 @@ require('lazy').setup({
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        documentation = { auto_show = false, auto_show_delay_ms = 500, border = 'rounded' },
+        menu = {
+          border = 'rounded',
+        },
       },
 
       sources = {
@@ -916,23 +919,13 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       ---@diagnostic disable-next-line: missing-fields
-      vim.cmd.colorscheme 'vscode'
+      --vim.cmd.colorscheme 'vscode'
     end,
   },
   {
     'rebelot/kanagawa.nvim',
     priority = 1000,
     config = function()
-      require('kanagawa').setup {
-        colors = {
-          palette = {
-            -- change all usages of these colors
-            sumiInk3 = '#0E1113',
-            sumiInk4 = '#121619', -- #181e21
-            sumiInk5 = '#181e21',
-          },
-        },
-      }
       --vim.cmd.colorscheme 'kanagawa-wave'
     end,
   },
@@ -958,6 +951,22 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       --vim.cmd.colorscheme 'nordic'
+    end,
+  },
+  {
+    'EdenEast/nightfox.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      --vim.cmd.colorscheme 'carbonfox'
+    end,
+  },
+  {
+    'ofirgall/ofirkai.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'ofirkai-darkblue'
     end,
   },
 
@@ -1039,7 +1048,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
